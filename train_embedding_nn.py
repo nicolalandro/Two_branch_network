@@ -45,8 +45,8 @@ def main(_):
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         if FLAGS.restore_path:
-            print('restoring checkpoint', restore_path)
-            saver.restore(sess, restore_path.replace('.meta', ''))
+            print('restoring checkpoint', FLAGS.restore_path)
+            saver.restore(sess, FLAGS.restore_path.replace('.meta', ''))
             print('done')
 
         for i in range(num_steps):
